@@ -3,6 +3,9 @@ let scene2;
 let scene3;
 
 let stress1;
+let stress2;
+let stress3;
+let stress4;
 
 let grow;
 
@@ -16,7 +19,15 @@ function setup() {
 
   stress1 = new Shape1(0, 0, 0);
   stress2 = new Shape2(400, 400, 0);
-  stress3 = new Shape3(0, 0, 0);
+  stress3 = new Shape2(400, 400, 0);
+  stress4 = new Shape2(400, 400, 0);
+  stress5 = new Shape2(400, 400, 0);
+  stress6 = new Shape2(400, 400, 0);
+  stress7 = new Shape2(400, 400, 0);
+  stress8 = new Shape2(400, 400, 0);
+  stress9 = new Shape2(400, 400, 0);
+  stress10 = new Shape2(400, 400, 0);
+  stress11 = new Shape3(400, 400, 0);
 
   grow = 1;
 
@@ -119,6 +130,46 @@ function runScene2(){
   stress2.display();
   stress2.move();
 
+  if(frameCount > 1010){
+    stress3.display();
+    stress3.move();
+  }
+
+  if(frameCount > 1220){
+    stress4.display();
+    stress4.move();
+  }
+
+  if(frameCount > 1430){
+    stress3.display();
+    stress3.move();
+  }
+
+  if(frameCount > 1540){
+    stress4.display();
+    stress4.move();
+  }
+
+  if(frameCount > 1590){
+    stress3.display();
+    stress3.move();
+  }
+
+  if(frameCount > 1630){
+    stress4.display();
+    stress4.move();
+  }
+
+  if(frameCount > 1660){
+    stress3.display();
+    stress3.move();
+  }
+
+  if(frameCount > 1690){
+    stress4.display();
+    stress4.move();
+  }
+
   if(frameCount > 1760){
     background(0);
   }
@@ -133,7 +184,10 @@ function runScene2(){
 function runScene3(){
   background(0, 0, 100);
 
-  stress3.display();
+  stroke(0);
+  strokeWeight(1);
+
+  stress11.display();
 
 
 
