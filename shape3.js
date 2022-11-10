@@ -7,26 +7,40 @@ class Shape3 {
   }
 
 
-  display(color){
+  display(){
     rectMode(CENTER);
 
     fill(25, 25, 36);
-    rect(this.x_, this.y_, 200, 200);
 
-/*
-    push();
-    translate(400, 400);
-    //scale(grow);
-    fill(25, 25, 36);
-    rect(this.x_, this.y_, this.x_ + 20, this.y_ + 20);
-    //grow = grow + 0.01;
-    pop();
-*/
+    if(frameCount > 1800 && frameCount < 1850){
+      rect(this.x_ + 400, this.y_ + 400, 200, 200);
+    }
+
+    if(frameCount >= 1850){
+      push();
+      translate(400, 400);
+      scale(shrink);
+      //fill(25, 25, 36);
+      rect(this.x_ , this.y_, 200, 200);
+      shrink = shrink - 0.001;
+      pop();
+    }
 
   }
 
 
+  move(){
+      this.x_ = this.x_ + random(-1, 1);
+      this.y_ = this.y_ + random(-1, 1);
 
+
+    /*for(let i = 1; i < 5; i+=0.01){
+      this.x_ = this.x_ + random(-i, i);
+      //this.y_ = this.y_ + random(-i, i);
+    }*/
+
+
+  }
 
 
 }

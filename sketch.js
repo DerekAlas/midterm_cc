@@ -2,12 +2,16 @@ let scene1;
 let scene2;
 let scene3;
 
-let stress1;
+/*let stress1;
 let stress2;
 let stress3;
 let stress4;
+let stress11;*/
 
 let grow;
+let grow_;
+let shrink;
+let opacity;
 
 function setup() {
   createCanvas(800, 800);
@@ -27,9 +31,13 @@ function setup() {
   stress8 = new Shape2(400, 400, 0);
   stress9 = new Shape2(400, 400, 0);
   stress10 = new Shape2(400, 400, 0);
-  stress11 = new Shape3(400, 400, 0);
+  stress11 = new Shape3(0, 0, 0);
+  stress12 = new Shape4(0, 0, 0);
 
   grow = 1;
+  grow_ = 1;
+  shrink = 1;
+  opacity = 0;
 
 }
 
@@ -58,10 +66,10 @@ function runScene1(){
   stroke(0);
   strokeWeight(4);
 
-  //stress1.move();
+  stress1.move();
   stress1.display(color(255));
 
-  if(frameCount > 700){
+  if(frameCount > 450){
     scene1 = false;
     scene2 = true;
   }
@@ -141,33 +149,33 @@ function runScene2(){
   }
 
   if(frameCount > 1430){
-    stress3.display();
-    stress3.move();
+    stress5.display();
+    stress5.move();
   }
 
   if(frameCount > 1540){
-    stress4.display();
-    stress4.move();
+    stress6.display();
+    stress6.move();
   }
 
   if(frameCount > 1590){
-    stress3.display();
-    stress3.move();
+    stress7.display();
+    stress7.move();
   }
 
   if(frameCount > 1630){
-    stress4.display();
-    stress4.move();
+    stress8.display();
+    stress8.move();
   }
 
   if(frameCount > 1660){
-    stress3.display();
-    stress3.move();
+    stress9.display();
+    stress9.move();
   }
 
   if(frameCount > 1690){
-    stress4.display();
-    stress4.move();
+    stress10.display();
+    stress10.move();
   }
 
   if(frameCount > 1760){
@@ -184,11 +192,37 @@ function runScene2(){
 function runScene3(){
   background(0, 0, 100);
 
-  stroke(0);
-  strokeWeight(1);
+  if((frameCount > 2600 && frameCount < 2610) || (frameCount > 2700 && frameCount < 2730) ||
+    (frameCount > 2750 && frameCount < 2755) || (frameCount > 2760 && frameCount < 2765) ||
+    (frameCount > 2780 && frameCount < 2790) || (frameCount > 2805 && frameCount < 2820) ||
+    (frameCount > 2840 && frameCount < 2850) || (frameCount > 2855 && frameCount < 2880) ||
+    (frameCount > 2900 && frameCount < 2910) || (frameCount > 2920 && frameCount < 2950) ||
+    (frameCount > 2975 && frameCount < 2990) || (frameCount > 3000 && frameCount < 3010) ||
+    (frameCount > 3020 && frameCount < 3030) || (frameCount > 3040 && frameCount < 3050) ||
+    (frameCount > 3060 && frameCount < 3070) || (frameCount > 3080 && frameCount < 3090) ||
+    (frameCount > 3100 && frameCount < 3110) || (frameCount > 3120 && frameCount < 3130) ||
+    (frameCount > 3150 && frameCount < 3160) || (frameCount > 3170 && frameCount < 3180) ||
+    (frameCount > 3190 && frameCount < 3200) || (frameCount > 3210 && frameCount < 3220) ||
+    (frameCount > 3230 && frameCount < 3240) || (frameCount > 3250)){
+        background(255, 0, 0);
+      }
+
+  noStroke();
+  //strokeWeight(1);
 
   stress11.display();
+  stress11.move();
 
+
+
+  //if(frameCount > 1800){
+    stroke(255, opacity);
+    strokeWeight(4);
+
+    stress12.move();
+    stress12.display();
+
+  //}
 
 
 }

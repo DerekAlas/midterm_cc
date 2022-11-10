@@ -8,6 +8,9 @@ class Shape2 {
 
 
   display(){
+
+    fill(255);
+
     triangle(this.x_ - 20, this.y_ + 50, this.x_, this.y_, this.x_ + 20, this.y_ + 50);
 
   }
